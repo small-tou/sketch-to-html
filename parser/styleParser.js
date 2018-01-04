@@ -218,13 +218,13 @@ const styleParser = function (style, attributedString, layer) {
             }
         });
     }
-    if (layer.backgroundColor) {
+    if (layer.backgroundColor && layer.hasBackgroundColor) {
         result.backgroundColor = colorParser(layer.backgroundColor);
     }
     if (style.shadows) {
         style.shadows.forEach((shadow) => {
             if (shadow.isEnabled) {
-                result.boxShadow = `${shadow.offsetX}px ${shadow.offsetY}px ${shadow.spread}px ${colorParser(shadow.color)}`;
+                result.boxShadow = `${shadow.offsetX}px ${shadow.offsetY}px ${shadow.blurRadius}px ${colorParser(shadow.color)}`;
             }
         });
     }

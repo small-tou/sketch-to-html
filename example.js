@@ -1,4 +1,4 @@
-const source = './../商学院17年12月份.sketch';
+const source = './喵老师绘本故事.sketch';
 
 var parser = require('./index')
 parser(source)
