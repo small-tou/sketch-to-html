@@ -26,7 +26,7 @@ parser(source);
 * 支持 mask 蒙层
 * 支持 icon 图片变色
 * 支持渐变 mask 蒙层
-* css 和 html 分离
+* 生成的页面 css 和 html 分离
 * 生成中间数据结构，可以支持转成其他框架视图
 * 更完善处理文字排版
 * 支持所有图层类型转换，不规则图形转成 svg
@@ -72,6 +72,90 @@ parser(source);
 ```
 ## 中间转换的数据结构
 
-```
+转换原理是将 sketch 文件先转为一个大的数据结构，然后遍历此数据结构生成 html 和 css，以下是数据结构的示例，后续可以从此数据结构生成其他语言的代码。
 
+```javascript
+{
+    "id": "E42E1F7C-C8AB-47F4-A131-22C31284ADC4",
+    "frame": {
+        "_class": "rect",
+        "constrainProportions": false,
+        "height": 50,
+        "width": 197,
+        "x": 250,
+        "y": 876
+    },
+    "style": {},
+    "path": null,
+    "isVisible": true,
+    "name": "Group_12",
+    "type": "group",
+    "isMask": false,
+    "childrens": [
+        {
+            "id": "B06A6329-E18B-4036-80EB-9E05384FB991",
+            "frame": {
+                "_class": "rect",
+                "constrainProportions": false,
+                "height": 49.99999999999998,
+                "width": 197,
+                "x": 0,
+                "y": 0
+            },
+            "style": {
+                "backgroundColor": "rgba(239,119,149,1)"
+            },
+            "path": null,
+            "isVisible": true,
+            "name": "Rectangle_3_5",
+            "type": "shapeGroup",
+            "isMask": false,
+            "childrens": [
+                {
+                    "id": "EBC7DA72-D642-42FF-8F46-DF6F96E47CEB",
+                    "frame": {
+                        "_class": "rect",
+                        "constrainProportions": false,
+                        "height": 49.99999999999998,
+                        "width": 196.9999999999999,
+                        "x": 0,
+                        "y": 0
+                    },
+                    "style": {
+                        "borderRadius": 100
+                    },
+                    "path": "M0,0L197,0L197,50L0,50L0,0Z",
+                    "isVisible": true,
+                    "name": "Path_19",
+                    "type": "rectangle",
+                    "isMask": false,
+                    "isRect": true
+                }
+            ]
+        },
+        {
+            "id": "69C0B6EF-A15F-409F-B2BC-744B6F479D42",
+            "frame": {
+                "_class": "rect",
+                "constrainProportions": false,
+                "height": 33,
+                "width": 153.8478260869566,
+                "x": 21.15217391304342,
+                "y": 6.999999999999989
+            },
+            "style": {
+                "color": "rgba(255,254,254,1)",
+                "fontSize": 24,
+                "textAlign": 2,
+                "text": "斩获无数大奖"
+            },
+            "path": null,
+            "isVisible": true,
+            "name": "zhan_huo_wu_shu_da_jiang",
+            "type": "text",
+            "isMask": false,
+            "text": "斩获无数大奖"
+        }
+    ]
+}
 ```

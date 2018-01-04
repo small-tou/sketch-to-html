@@ -54,8 +54,9 @@ const handleItem = function (item) {
         result.frame.x = null;
         result.frame.y = null;
     }
-    result.symbolID = item.symbolID;
-
+    if(item.symbolID) {
+        result.symbolID = item.symbolID;
+    }
     return result;
 };
 
