@@ -48,12 +48,18 @@ class CommonLayer {
                 parentOtherStyle = {
                     color: this.parentLayer.style.color,
                     'background-color': this.parentLayer.style.backgroundColor,
+                    'background-image': this.parentLayer.style.backgroundImage ? `url(${path.join(this.imagePath, this.parentLayer.style.backgroundImage)}.png)` : null,
+                    'background': this.parentLayer.style.linearGradientString,
                     'line-height': util.pxvalue(this.parentLayer.style.lineHeight),
                     'border-color': this.parentLayer.style.borderColor,
                     'border-width': util.pxvalue(this.parentLayer.style.borderWidth),
-                    'border-style': this.parentLayer.style.borderStyle
+                    'border-style': this.parentLayer.style.borderStyle,
+                    'border-radius': util.pxvalue(this.parentLayer.style.borderRadius),
                 };
             }
+            delete this.parentLayer.finalStyle['background']
+            delete this.parentLayer.finalStyle['background-image']
+            delete this.parentLayer.finalStyle['background-color']
             style = util.assign(parentOtherStyle, style);
         }
         if (StyleStore.get(this.selector)) {
@@ -62,6 +68,7 @@ class CommonLayer {
             StyleStore.set(this.selector, style);
             finalStyle = {};
         }
+
         return finalStyle;
     }
     getHtml (childString) {
