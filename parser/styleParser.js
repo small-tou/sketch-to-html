@@ -60,8 +60,8 @@ const styleParser = function (style, attributedString, layer) {
         });
     }
 
-
-    if (style.textStyle) {
+    /*fixed:add check attributedString null by Vincent2015 20180108 */
+    if (style.textStyle && attributedString && attributedString.archivedAttributedString)
         const decodedAttributedString = parseArchive(attributedString.archivedAttributedString._archive);
         // item.decodedTextAttributes = decodedAttributedString;
         let encodedAttributes;
