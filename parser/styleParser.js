@@ -79,7 +79,6 @@ const styleParser = function (style, attributedString, layer) {
 
         }
 
-
         if (decodedAttributedString.NSAttributes.NSColor && decodedAttributedString.NSAttributes.NSColor.NSRGB) {
             const colorArray = decodedAttributedString.NSAttributes.NSColor.NSRGB.toString().split(' ');
             const colors = {};
@@ -100,6 +99,9 @@ const styleParser = function (style, attributedString, layer) {
         }
         if (decodedMSAttributedStringFontAttribute) {
             result.fontSize = decodedMSAttributedStringFontAttribute.NSFontDescriptorAttributes.NSFontSizeAttribute;
+        }
+        if (decodedAttributedString.NSAttributes.NSKern){
+            result.letterSpacing = decodedAttributedString.NSAttributes.NSKern;
         }
         if (decodedAttributedString.NSAttributes.NSParagraphStyle) {
             const paragraphSpacing = decodedAttributedString.NSAttributes.NSParagraphStyle.NSParagraphSpacing;

@@ -23,6 +23,7 @@ class CommonLayer {
             'border-width': util.pxvalue(this.layer.style.borderWidth),
             'border-style': this.layer.style.borderStyle,
             'box-shadow': this.layer.style.boxShadow,
+            'letter-spacing':util.pxvalue(this.layer.style.letterSpacing),
             '-webkit-text-stroke-width': util.pxvalue(this.layer.style.textStrokeWidth),
             '-webkit-text-stroke-color': util.pxvalue(this.layer.style.textStrokeColor)
         };
