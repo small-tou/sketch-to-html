@@ -40,6 +40,7 @@ module.exports = function(source){
         }
         // 复制图片到结果文件夹
         fse.copy('./output/images', './output/html/images', err => { });
+        fse.copy('./template/assets', './output/html/assets', err => { });
         fse.copy('./template/index.html', './output/html/index.html', err => { });
         // 对所有页面进行通用组件提取
         let files = fs.readdirSync('./output/pages');
@@ -61,9 +62,9 @@ module.exports = function(source){
             }
         });
         fse.outputFile('./output/html/index.js', (() => {
-            let r = '';
+            let r = 'window.data = [];';
             outPages.forEach((p) => {
-                r += `addTab('${p.url}','${p.name}');`;
+                r += `\n data.push({url:'${p.url}',title:'${p.name}',type:'folder'});`;
             });
             return r;
         })(), e => {
