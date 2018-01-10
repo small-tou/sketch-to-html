@@ -11,6 +11,25 @@ class CommonLayer {
     }
 
     getStyle () {
+        let width = this.layer.frame.width, height = this.layer.frame.height;
+        if(this.layer.type == 'text' && this.layer.style.fontSize && this.layer.style.fontSize < 12 ){
+            this.layer.style.fontSize *= 5;
+            width *=  5;
+            height *=  5;
+            if(this.layer.style.letterSpacing) {
+                if(this.layer.style.letterSpacing>0){
+                    this.layer.style.letterSpacing = this.layer.style.letterSpacing*5;
+                }else{
+                    this.layer.style.letterSpacing = this.layer.style.letterSpacing*5;
+                }
+            }
+
+            this.layer.style.lineHeight && (this.layer.style.lineHeight *= 5);
+            this.layer.frame.x -= (width - this.layer.frame.width )/2
+            this.layer.frame.y -= (height - this.layer.frame.height )/2
+            this.layer.style.transform = this.layer.style.transform ||[]
+            this.layer.style.transform.push('scale(0.2)')
+        }
         let otherStyle = {
             'color': this.layer.style.color,
             'background-image': this.layer.style.backgroundImage ? `url(${path.join(this.imagePath, this.layer.style.backgroundImage)}.png)` : null,
@@ -30,7 +49,7 @@ class CommonLayer {
             '-webkit-text-stroke-color': util.pxvalue(this.layer.style.textStrokeColor)
         };
         let parentOtherStyle = {};
-        let width = this.layer.frame.width, height = this.layer.frame.height;
+
         if(this.parentLayer && this.parentLayer.type == 'shapeGroup') {
             parentOtherStyle = {
                 'color': this.parentLayer.style.color,
@@ -69,7 +88,6 @@ class CommonLayer {
             'box-shadow': this.layer.style.boxShadow,
             'background': this.layer.style.linearGradientString,
             'opacity': this.layer.style.opacity,
-            'overflow': 'hidden'
         };
 
         let style = Object.assign({}, frameStyle, otherStyle);

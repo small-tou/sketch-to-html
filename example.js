@@ -1,4 +1,4 @@
-const source = './Ant.Design.Mobile.Template.sketch';
+const source = './ooto.sketch';
 
 var parser = require('./index')
 parser(source)

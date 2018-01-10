@@ -21,7 +21,6 @@ class GroupLayer {
             // 'background-image': layer.style.backgroundImage ? `url(${path.join(imagePath, layer.style.backgroundImage)}.png)` : null,
             'background': this.layer.style.linearGradientString,
             'opacity': this.layer.style.opacity,
-            'overflow': 'hidden'
         };
         return Object.assign({}, frameStyle);
     }

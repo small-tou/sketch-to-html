@@ -1,0 +1,44 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="utf-8">
+    <title>sketch to html</title>
+    <link rel="stylesheet"
+          href="./assets/css/bootstrap.min.css">
+    <script src="http://assets.souche.com/assets/js/lib/jquery-1.7.1.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="main">
+    <div id="wrapper" class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <div style="font-size:20px;line-height: 40px;margin-top:30px;">所有页面列表</div>
+                <ul class="list-group">
+                </ul></div>
+            <div class="col-md-10">
+                <iframe style="border:none;width:100%;" id="iframe"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./index.js"></script>
+<script >
+    $('#iframe').css('height',window.innerHeight)
+    window.data.forEach(function(d){
+        $('.list-group').append('<li class="list-group-item" data-url="'+d.url+'">'+d.title+'</li>')
+    })
+
+    var active = function(ele){
+        $('.list-group li').removeClass('active')
+        $(ele).addClass('active')
+        $("#iframe").attr('src',$(ele).attr('data-url'))
+    }
+    active($('.list-group li:first-child'))
+    $('.list-group li').on('click',function(){
+        active($(this));
+    })
+</script>
+</body>
+</html>
