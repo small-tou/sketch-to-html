@@ -22,11 +22,11 @@ parser(source);
 
 运行示例：
 
-```
-git clone https://github.com/xinyu198736/sketch-to-html.git
-cd sketch-to-html
-npm install
-npm run example
+```bash
+git clone https://github.com/xinyu198736/sketch-to-html.git;
+cd sketch-to-html;
+npm install;
+npm run example;
 ```
 
 在线查看生成的 html 示例：
