@@ -31,7 +31,7 @@ npm run example
 
 在线查看生成的 html 示例：
 
-[./docs/index.html](./docs/index.html)
+[https://xinyu198736.github.io/sketch-to-html/docs/index.html](https://xinyu198736.github.io/sketch-to-html/docs/index.html)
 
 ## 优势
 
