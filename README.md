@@ -3,10 +3,13 @@
 ## 使用
 
 安装：
+
 ```javascript
 npm install sketch-to-html --save
 ```
+
 引入并解析：
+
 ```javascript
 const source = './xxx.sketch';
 
@@ -17,7 +20,21 @@ parser(source);
 
 > 这个库刚开发出来，用起来还不太优雅，呵呵，这里只是提供一种演示，后续会开拓一些实用功能
 
+运行示例：
+
+```
+git clone https://github.com/xinyu198736/sketch-to-html.git
+cd sketch-to-html
+npm install
+npm run example
+```
+
+在线查看生成的 html 示例：
+
+[./docs/index.html](./docs/index.html)
+
 ## 优势
+
 相比 github 上其他的库，特别支持以下特性：
 
 * 更好的处理各种旋转变形属性
