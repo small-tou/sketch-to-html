@@ -60,10 +60,9 @@ const styleParser = function (style, attributedString, layer) {
         });
     }
 
-    /*fixed:add check attributedString null by Vincent2015 20180108 */
-    if (style.textStyle && attributedString && attributedString.archivedAttributedString)
+
+    if (style.textStyle && attributedString && attributedString.archivedAttributedString) {
         const decodedAttributedString = parseArchive(attributedString.archivedAttributedString._archive);
-        // item.decodedTextAttributes = decodedAttributedString;
         let encodedAttributes;
         let decodedNSColor;
         let decodedNSParagraphStyle;
@@ -77,6 +76,9 @@ const styleParser = function (style, attributedString, layer) {
             if (encodedAttributes.MSAttributedStringFontAttribute)
                 decodedMSAttributedStringFontAttribute = parseArchive(encodedAttributes.MSAttributedStringFontAttribute._archive);
 
+        }
+        if(layer.do_objectID == '71B58067-4BDC-4A03-B331-4B2B9DE601DF'){
+        console.log(JSON.stringify(decodedAttributedString,null,4))
         }
 
         if (decodedAttributedString.NSAttributes.NSColor && decodedAttributedString.NSAttributes.NSColor.NSRGB) {
@@ -94,11 +96,19 @@ const styleParser = function (style, attributedString, layer) {
             result.color = result.color || '#000000';
             // result.opacity = 1;
         }
+
         if (decodedAttributedString.NSAttributes.MSAttributedStringFontAttribute) {
-            result.fontSize = decodedAttributedString.NSAttributes.MSAttributedStringFontAttribute.NSFontDescriptorAttributes.NSFontSizeAttribute;
+            let fontAttr = decodedAttributedString.NSAttributes.MSAttributedStringFontAttribute.NSFontDescriptorAttributes;
+            result.fontSize = fontAttr.NSFontSizeAttribute;
+            if(fontAttr.NSFontNameAttribute){
+                result.fontFamily = fontAttr.NSFontNameAttribute;
+            }
         }
         if (decodedMSAttributedStringFontAttribute) {
             result.fontSize = decodedMSAttributedStringFontAttribute.NSFontDescriptorAttributes.NSFontSizeAttribute;
+            if(decodedMSAttributedStringFontAttribute.NSFontDescriptorAttributes.NSFontNameAttribute){
+                result.fontFamily = decodedMSAttributedStringFontAttribute.NSFontDescriptorAttributes.NSFontNameAttribute;
+            }
         }
         if (decodedAttributedString.NSAttributes.NSKern){
             result.letterSpacing = decodedAttributedString.NSAttributes.NSKern;

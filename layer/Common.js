@@ -11,7 +11,7 @@ class CommonLayer {
     }
     getStyle (){
         let otherStyle = {
-            color: this.layer.style.color,
+            'color': this.layer.style.color,
             'background-image': this.layer.style.backgroundImage ? `url(${path.join(this.imagePath, this.layer.style.backgroundImage)}.png)` : null,
             'background-color': this.layer.style.backgroundColor,
             'background': this.layer.style.linearGradientString,
@@ -19,6 +19,7 @@ class CommonLayer {
             'line-height': util.pxvalue(this.layer.style.lineHeight) || 'normal',
             'margin-top': util.pxvalue(this.layer.style.marginTop),
             'font-size': util.pxvalue(this.layer.style.fontSize),
+            'font-family': this.layer.style.fontFamily,
             'border-color': this.layer.style.borderColor,
             'border-width': util.pxvalue(this.layer.style.borderWidth),
             'border-style': this.layer.style.borderStyle,
@@ -28,15 +29,13 @@ class CommonLayer {
             '-webkit-text-stroke-color': util.pxvalue(this.layer.style.textStrokeColor)
         };
         let frameStyle = {
-            position: 'absolute',
-            left: util.pxvalue(this.layer.frame.x),
-            top: util.pxvalue(this.layer.frame.y),
-            width: util.pxvalue(this.layer.frame.width),
-            height: util.pxvalue(this.layer.frame.height),
+            'position': 'absolute',
+            'left': util.pxvalue(this.layer.frame.x),
+            'top': util.pxvalue(this.layer.frame.y),
+            'width': util.pxvalue(this.layer.frame.width),
+            'height': util.pxvalue(this.layer.frame.height),
             'transform': this.layer.style.transform ? this.layer.style.transform.join(' ') : null,
             'box-shadow': this.layer.style.boxShadow,
-            // 'background-color': layer.style.backgroundColor,
-            // 'background-image': layer.style.backgroundImage ? `url(${path.join(imagePath, layer.style.backgroundImage)}.png)` : null,
             'background': this.layer.style.linearGradientString,
             'opacity': this.layer.style.opacity
         };
@@ -47,7 +46,7 @@ class CommonLayer {
             let parentOtherStyle = {};
             if (this.parentLayer) {
                 parentOtherStyle = {
-                    color: this.parentLayer.style.color,
+                    'color': this.parentLayer.style.color,
                     'background-color': this.parentLayer.style.backgroundColor,
                     'background-image': this.parentLayer.style.backgroundImage ? `url(${path.join(this.imagePath, this.parentLayer.style.backgroundImage)}.png)` : null,
                     'background': this.parentLayer.style.linearGradientString,
