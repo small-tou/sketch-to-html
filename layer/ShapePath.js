@@ -27,16 +27,15 @@ class ShapePathLayer {
             '-webkit-text-stroke-width': util.pxvalue(this.layer.style.textStrokeWidth),
             '-webkit-text-stroke-color': util.pxvalue(this.layer.style.textStrokeColor)
         };
+        let width = this.layer.frame.width, height = this.layer.frame.height;
         let frameStyle = {
             position: 'absolute',
             left: util.pxvalue(this.layer.frame.x),
             top: util.pxvalue(this.layer.frame.y),
-            width: util.pxvalue(this.layer.frame.width),
-            height: util.pxvalue(this.layer.frame.height),
+            width: util.pxvalue(width),
+            height: util.pxvalue(height),
             'transform': this.layer.style.transform ? this.layer.style.transform.join(' ') : null,
             'box-shadow': this.layer.style.boxShadow,
-            // 'background-color': layer.style.backgroundColor,
-            // 'background-image': layer.style.backgroundImage ? `url(${path.join(imagePath, layer.style.backgroundImage)}.png)` : null,
             'background': this.layer.style.linearGradientString,
             'opacity': this.layer.style.opacity
         };
@@ -51,7 +50,7 @@ class ShapePathLayer {
         };
         let finalStyle;
         style = util.assign(pathStyle, style);
-        if (StyleStore.get(this.selector)) {
+        if(StyleStore.get(this.selector)) {
             finalStyle = style;
         } else {
             StyleStore.set(this.selector, style);

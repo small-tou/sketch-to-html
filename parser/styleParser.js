@@ -44,15 +44,18 @@ const styleParser = function (style, attributedString, layer) {
              "thickness": 1
          }
          */
+
         style.borders.forEach((_border) => {
             if (_border.isEnabled) {
                 if (layer._class == 'text') {
                     result.textStrokeWidth = _border.thickness;
                     result.textStrokeColor = colorParser(_border.color);
                 } else {
+
                     result.borderColor = colorParser(_border.color);
                     result.borderWidth = _border.thickness;
                     result.borderStyle = 'solid';
+                    result.borderPosition = _border.position;
                 }
 
             }
@@ -77,9 +80,7 @@ const styleParser = function (style, attributedString, layer) {
                 decodedMSAttributedStringFontAttribute = parseArchive(encodedAttributes.MSAttributedStringFontAttribute._archive);
 
         }
-        if(layer.do_objectID == '71B58067-4BDC-4A03-B331-4B2B9DE601DF'){
-        console.log(JSON.stringify(decodedAttributedString,null,4))
-        }
+
 
         if (decodedAttributedString.NSAttributes.NSColor && decodedAttributedString.NSAttributes.NSColor.NSRGB) {
             const colorArray = decodedAttributedString.NSAttributes.NSColor.NSRGB.toString().split(' ');
