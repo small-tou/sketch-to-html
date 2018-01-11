@@ -11,7 +11,11 @@ const htmlRender = require('./render/htmlRender');
 const { exec } = require('child_process');
 var outPages = [];
 
-
+/**
+ * 以 ArtBoard 为单位输出页面
+ * @param layer
+ * @param pageName
+ */
 const handleArtBoard = (layer, pageName) => {
     if (layer.type == 'artboard') {
         StyleStore.reset();
@@ -40,9 +44,11 @@ module.exports = function(source){
         }
         // 复制图片到结果文件夹
         fse.copy('./output/images', './output/html/images', err => { });
+        // 复制模板资源文件夹
         fse.copy('./template/assets', './output/html/assets', err => { });
+        // 复制首页
         fse.copy('./template/index.html', './output/html/index.html', err => { });
-        // 对所有页面进行通用组件提取
+        // 读取每个 page 的信息
         let files = fs.readdirSync('./output/pages');
         let fileStore = {};
         files.forEach((f) => {
@@ -61,17 +67,18 @@ module.exports = function(source){
                 handleArtBoard(result, `page-${result.name}`);
             }
         });
+        // 输出模板页面 js 中的页面配置数据
         fse.outputFile('./output/html/index.js', (() => {
-            let r = 'window.data = [];';
+            let r = 'window.data = [];\n';
             outPages.forEach((p) => {
-                r += `\n data.push({url:'${p.url}',title:'${p.name}',type:'folder'});`;
+                r += `data.push({url:'${p.url}',title:'${p.name}',type:'folder'});\n`;
             });
             return r;
         })(), e => {
 
         });
 
-        exec(`open -a "/Applications/Google Chrome.app" "${__dirname + '/output/html/index.html'}"`);
+        exec(`open "${__dirname + '/output/html/index.html'}"`);
 
     });
 }
