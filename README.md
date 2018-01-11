@@ -4,8 +4,8 @@
 
 安装：
 
-```javascript
-npm install sketch-to-html --save
+```bash
+$ npm install sketch-to-html --save
 ```
 
 引入并解析：
@@ -23,10 +23,10 @@ parser(source);
 运行示例：
 
 ```bash
-git clone https://github.com/xinyu198736/sketch-to-html.git;
-cd sketch-to-html;
-npm install;
-npm run example;
+$ git clone https://github.com/xinyu198736/sketch-to-html.git
+$ cd sketch-to-html
+$ npm install
+$ npm run example
 ```
 
 在线查看生成的 html 示例：

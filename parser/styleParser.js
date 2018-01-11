@@ -1,4 +1,4 @@
-const colorParser = require('./colorParser');
+const colorParser = require('./../util').color;
 const bplistParser = require('bplist-parser');
 const NSArchiveParser = require('./NSArchiveParser.js');
 const util = require('./../util.js');
@@ -8,8 +8,6 @@ const styleParser = function (style, attributedString, layer) {
     if (layer.fixedRadius) {
         result.borderRadius = layer.fixedRadius;
     }
-
-
     if (layer.isFlippedHorizontal) {
         result.transform = result.transform || [];
         result.transform.push('rotateY(180deg)');
@@ -28,30 +26,12 @@ const styleParser = function (style, attributedString, layer) {
         result.opacity = style.contextSettings.opacity;
     }
     if (style.borders) {
-        /**
-         {
-             "_class": "border",
-             "isEnabled": false,
-             "color": {
-                 "_class": "color",
-                 "alpha": 1,
-                 "blue": 0.592,
-                 "green": 0.592,
-                 "red": 0.592
-             },
-             "fillType": 0,
-             "position": 1,
-             "thickness": 1
-         }
-         */
-
         style.borders.forEach((_border) => {
             if (_border.isEnabled) {
                 if (layer._class == 'text') {
                     result.textStrokeWidth = _border.thickness;
                     result.textStrokeColor = colorParser(_border.color);
                 } else {
-
                     result.borderColor = colorParser(_border.color);
                     result.borderWidth = _border.thickness;
                     result.borderStyle = 'solid';
@@ -94,7 +74,6 @@ const styleParser = function (style, attributedString, layer) {
             result.color = colorParser(colors);
         } else {
             result.color = result.color || '#000000';
-            // result.opacity = 1;
         }
 
         if (decodedAttributedString.NSAttributes.MSAttributedStringFontAttribute) {
@@ -125,44 +104,14 @@ const styleParser = function (style, attributedString, layer) {
             } else {
                 result.textAlign = 0;
             }
-
-
-            // data.$$paragraphSpacing = paragraphSpacing;
             result.minLineHeight = minLineHeight;
             result.maxLineHeight = maxLineHeight;
             result.lineHeight = minLineHeight; //+ paragraphSpacing;
             result.paragraphSpacing = paragraphSpacing;
-            // result.marginTop = -1 * paragraphSpacing / 2;
-
         }
-        result.text = decodedAttributedString.NSString.split(/\n/g).join(`<div style="height:${util.pxvalue(result.paragraphSpacing)}"></div>`);
-
-
-        // if(layer.frame.height > result.fontSize * 1.5) {
-        //     result.lineHeight = result.lineHeight || result.fontSize
-        // } else {
-        //     result.lineHeight = result.lineHeight || layer.frame.height;
-        // }
+        result.text = decodedAttributedString.NSString.split(/\n/g).join(`<div style="height:${util.px2rem(result.paragraphSpacing)}"></div>`);
     }
     if (style.fills) {
-        /**
-         {
-             "_class": "fill",
-             "isEnabled": true,
-             "color": {
-                 "_class": "color",
-                 "alpha": 1,
-                 "blue": 0.8509803921568627,
-                 "green": 0.8509803921568627,
-                 "red": 0.8509803921568627
-             },
-             "fillType": 0,
-             "noiseIndex": 0,
-             "noiseIntensity": 0,
-             "patternFillType": 0,
-             "patternTileScale": 1
-         }
-         */
         style.fills.forEach((fill) => {
             if (fill.isEnabled) {
 
@@ -179,12 +128,7 @@ const styleParser = function (style, attributedString, layer) {
                     const to = util.toPoint(gradient.from);
                     to.x = to.x * layer.frame.width;
                     to.y = to.y * layer.frame.height;
-                    // linearGradient.x1 = from.x * 100 + '%';
-                    // linearGradient.x2 = to.x * 100 + '%';
-                    // linearGradient.y1 = from.y * 100 + '%';
-                    // linearGradient.y2 = to.y * 100 + '%';
                     linearGradient.stops = [];
-                    // linearGradient.isLinearGradient = true;
                     let angle = linearGradient.angle = Math.atan(to.x - from.x) / (to.y - from.y) * 180 / Math.PI;
                     let gradientLength = layer.frame.height / Math.cos(angle);
                     gradient.stops.forEach((stop) => {
@@ -215,8 +159,6 @@ const styleParser = function (style, attributedString, layer) {
                     });
                     linearGradient.stops.unshift(beginStop);
                     linearGradient.stops.push(endStop);
-                    // linearGradient.stops.reverse();
-
                     result.linearGradient = linearGradient;
                     result.linearGradientString = `linear-gradient(${linearGradient.angle}deg, ${linearGradient.stops.map((s)=>{
                         return s.color + ' ' + (s.offset * 100) + '%';
@@ -227,9 +169,7 @@ const styleParser = function (style, attributedString, layer) {
                     } else {
                         result.backgroundColor = colorParser(fill.color);
                     }
-
                 }
-
             }
         });
     }

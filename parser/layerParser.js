@@ -3,7 +3,6 @@ const SymbolStore = require('./../store/SymbolStore');
 const styleParser = require('./styleParser');
 const pathParser = require('./pathParser');
 const pinyin = require('node-pinyin');
-const result = [];
 const nameStore = [];
 const rename = function (name) {
     let index = 1;

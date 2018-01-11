@@ -16,24 +16,24 @@ class ShapePathLayer {
             'background-image': this.layer.style.backgroundImage ? `url(${path.join(this.imagePath, this.layer.style.backgroundImage)}.png)` : null,
             'background-color': this.layer.style.backgroundColor,
             'background': this.layer.style.linearGradientString,
-            'border-radius': util.pxvalue(this.layer.style.borderRadius),
-            'line-height': util.pxvalue(this.layer.style.lineHeight) || 'normal',
-            'margin-top': util.pxvalue(this.layer.style.marginTop),
-            'font-size': util.pxvalue(this.layer.style.fontSize),
+            'border-radius': util.px2rem(this.layer.style.borderRadius),
+            'line-height': util.px2rem(this.layer.style.lineHeight) || 'normal',
+            'margin-top': util.px2rem(this.layer.style.marginTop),
+            'font-size': util.px2rem(this.layer.style.fontSize),
             'border-color': this.layer.style.borderColor,
-            'border-width': util.pxvalue(this.layer.style.borderWidth),
+            'border-width': util.px2rem(this.layer.style.borderWidth),
             'border-style': this.layer.style.borderStyle,
             'box-shadow': this.layer.style.boxShadow,
-            '-webkit-text-stroke-width': util.pxvalue(this.layer.style.textStrokeWidth),
-            '-webkit-text-stroke-color': util.pxvalue(this.layer.style.textStrokeColor)
+            '-webkit-text-stroke-width': util.px2rem(this.layer.style.textStrokeWidth),
+            '-webkit-text-stroke-color': util.px2rem(this.layer.style.textStrokeColor)
         };
         let width = this.layer.frame.width, height = this.layer.frame.height;
         let frameStyle = {
             position: 'absolute',
-            left: util.pxvalue(this.layer.frame.x),
-            top: util.pxvalue(this.layer.frame.y),
-            width: util.pxvalue(width),
-            height: util.pxvalue(height),
+            left: util.px2rem(this.layer.frame.x),
+            top: util.px2rem(this.layer.frame.y),
+            width: util.px2rem(width),
+            height: util.px2rem(height),
             'transform': this.layer.style.transform ? this.layer.style.transform.join(' ') : null,
             'box-shadow': this.layer.style.boxShadow,
             'background': this.layer.style.linearGradientString,
@@ -44,8 +44,8 @@ class ShapePathLayer {
         let pathStyle = {
             fill: this.parentLayer.style.backgroundColor || 'none',
             stroke: this.parentLayer.style.borderColor,
-            width: util.pxvalue(this.layer.frame.width),
-            height: util.pxvalue(this.layer.frame.height),
+            width: util.px2rem(this.layer.frame.width),
+            height: util.px2rem(this.layer.frame.height),
             'stroke-width': this.parentLayer.style.borderWidth ? (this.parentLayer.style.borderWidth + 'px') : 1
         };
         let finalStyle;

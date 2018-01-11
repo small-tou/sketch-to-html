@@ -5,20 +5,25 @@ var util = {
      * @returns {string}
      */
     color: function(color) {
-        return `rgba(${parseInt(color.red*255)},${parseInt(color.green*255)},${parseInt(color.blue*255)},${color.alpha})`
+        return `rgba(${parseInt(color.red * 255)},${parseInt(color.green * 255)},${parseInt(color.blue * 255)},${color.alpha})`;
     },
+    /**
+     * 是否正方形
+     * @param p1
+     * @param p2
+     * @param p3
+     * @param p4
+     * @returns {boolean}
+     */
     isSquare: function (p1, p2, p3, p4) {
 
         let distSq = (p, q) => {
             return (p.x - q.x) * (p.x - q.x) +
               (p.y - q.y) * (p.y - q.y);
-        }
-
-
+        };
         let d2 = distSq(p1, p2);  // from p1 to p2
         let d3 = distSq(p1, p3);  // from p1 to p3
         let d4 = distSq(p1, p4);  // from p1 to p4
-
         let s1 = distSq(p1, p2);
         let s2 = distSq(p2, p3);
         let s3 = distSq(p3, p4);
@@ -30,24 +35,29 @@ var util = {
         // 1) Square of length of (p1, p4) is same as twice
         //    the square of (p1, p2)
         // 2) p4 is at same distance from p2 and p3
-        if(d2 == d3 && 2 * d2 == d4) {
+        if (d2 == d3 && 2 * d2 == d4) {
             let d = distSq(p2, p4);
             return (d == distSq(p3, p4) && d == d2);
         }
 
-        if(d3 == d4 && 2 * d3 == d2) {
+        if (d3 == d4 && 2 * d3 == d2) {
             let d = distSq(p2, p3);
             return (d == distSq(p2, p4) && d == d3);
         }
-        if(d2 == d4 && 2 * d2 == d3) {
+        if (d2 == d4 && 2 * d2 == d3) {
             let d = distSq(p2, p3);
             return (d == distSq(p3, p4) && d == d2);
         }
 
         return false;
     },
+    /**
+     * 是否是正方形图层
+     * @param layer
+     * @returns {*}
+     */
     isSqu: function (layer) {
-        if(layer.path.points.length !== 4) {
+        if (layer.path.points.length !== 4) {
             return false;
         }
         const rectPoints = layer.path.points.map(x => this.toPoint(x.point, layer));
@@ -60,12 +70,12 @@ var util = {
      * @returns {boolean}
      */
     isCircle: function (layer) {
-        if(!layer.path.points || layer.path.points.length !== 4) {
+        if (!layer.path.points || layer.path.points.length !== 4) {
             return false;
         }
         const isSquare = this.isSqu( layer);
         const hasCurveTo = layer.path.points.filter(x => x.hasCurveTo === true).length === 4;
-        if(isSquare && hasCurveTo) {
+        if (isSquare && hasCurveTo) {
             return true;
         }
         return false;
@@ -97,18 +107,23 @@ var util = {
     IsOrthogonal(a, b, c) {
         return (b.x - a.x) * (b.x - c.x) + (b.y - a.y) * (b.y - c.y) === 0;
     },
+    /**
+     * 比例转换成具体位置
+     * @param p
+     * @param layer
+     * @returns {{x: number, y: number}}
+     */
     toPoint: function (p, layer) {
         let coords = { x: 0, y: 0 };
         let refWidth = 1;
         let refHeight = 1;
-        if(layer) {
+        if (layer) {
             refWidth = layer.frame.width;
             refHeight = layer.frame.height;
         }
         p = p.substring(1);
         p = p.substring(0, p.length - 1);
         p = p.split(',');
-
 
         return {
             x: Number(p[0].trim()) * refWidth,
@@ -121,56 +136,44 @@ var util = {
      * @returns {Array}
      */
     getStyleString(style) {
-        var styleString = [];
-        for(var i in style) {
-            if(style[i]!==null && style[i]!==undefined ) {
-                styleString.push(`${i}: ${style[i]}`)
+        let styleString = [];
+        for (let i in style) {
+            if (style[i] !== null && style[i] !== undefined ) {
+                styleString.push(`${i}: ${style[i]}`);
             }
         }
-        styleString = styleString.join(';')
+        styleString = styleString.join(';');
         return styleString;
     },
+    /**
+     * 忽略 null 和 undefined 的 assign
+     * @param target
+     * @param source
+     * @returns {{}}
+     */
     assign(target, source){
-        var result = {};
-        for(var i in target) {
-            if(target[i] !== undefined && target[i] !== null) {
+        let result = {};
+        for (let i in target) {
+            if (target[i] !== undefined && target[i] !== null) {
                 result[i] = target[i];
             }
         }
-        for(var i in source) {
-            if(source[i] !== undefined && source[i] !== null) {
+        for (let i in source) {
+            if (source[i] !== undefined && source[i] !== null) {
                 result[i] = source[i];
             }
         }
         return result;
     },
-    objectToCSS(obj){
-        var result = '';
-        for(var selector in obj) {
-            var style = '';
-            for(var key in obj[selector]){
-                if(obj[selector][key]!==null&&obj[selector][key]!==undefined){
-                    style += `${key}:${obj[selector][key]};\n`
-                }
-
-            }
-            result += `
-${selector} {
-    ${style}
-}`
-        }
-        return result;
-    },
-    pxvalue(value){
-        if(value) {
-            value = value/75;
+    px2rem(value){
+        if (value) {
+            value = value / 75;
             value = parseFloat(value).toFixed(6);
-            return (value+'rem');
-        }else{
-            return null
+            return (value + 'rem');
         }
+        return null;
     }
 
-}
+};
 
 module.exports = util;

@@ -11,10 +11,10 @@ class ShapeGroupLayer {
         let otherStyl;
         let frameStyle = {
             position: 'absolute',
-            left: util.pxvalue(this.layer.frame.x),
-            top: util.pxvalue(this.layer.frame.y),
-            width: util.pxvalue(this.layer.frame.width),
-            height: util.pxvalue(this.layer.frame.height),
+            left: util.px2rem(this.layer.frame.x),
+            top: util.px2rem(this.layer.frame.y),
+            width: util.px2rem(this.layer.frame.width),
+            height: util.px2rem(this.layer.frame.height),
             'transform': this.layer.style.transform ? this.layer.style.transform.join(' ') : null,
             'box-shadow': this.layer.style.boxShadow,
             // 'background-color': layer.style.backgroundColor,

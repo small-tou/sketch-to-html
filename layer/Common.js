@@ -35,18 +35,18 @@ class CommonLayer {
             'background-image': this.layer.style.backgroundImage ? `url(${path.join(this.imagePath, this.layer.style.backgroundImage)}.png)` : null,
             'background-color': this.layer.style.backgroundColor,
             'background': this.layer.style.linearGradientString,
-            'border-radius': util.pxvalue(this.layer.style.borderRadius),
-            'line-height': util.pxvalue(this.layer.style.lineHeight) || 'normal',
-            'margin-top': util.pxvalue(this.layer.style.marginTop),
-            'font-size': util.pxvalue(this.layer.style.fontSize),
+            'border-radius': util.px2rem(this.layer.style.borderRadius),
+            'line-height': util.px2rem(this.layer.style.lineHeight) || 'normal',
+            'margin-top': util.px2rem(this.layer.style.marginTop),
+            'font-size': util.px2rem(this.layer.style.fontSize),
             'font-family': this.layer.style.fontFamily,
             'border-color': this.layer.style.borderColor,
-            'border-width': util.pxvalue(this.layer.style.borderWidth),
+            'border-width': util.px2rem(this.layer.style.borderWidth),
             'border-style': this.layer.style.borderStyle,
             'box-shadow': this.layer.style.boxShadow,
-            'letter-spacing': util.pxvalue(this.layer.style.letterSpacing),
-            '-webkit-text-stroke-width': util.pxvalue(this.layer.style.textStrokeWidth),
-            '-webkit-text-stroke-color': util.pxvalue(this.layer.style.textStrokeColor)
+            'letter-spacing': util.px2rem(this.layer.style.letterSpacing),
+            '-webkit-text-stroke-width': util.px2rem(this.layer.style.textStrokeWidth),
+            '-webkit-text-stroke-color': util.px2rem(this.layer.style.textStrokeColor)
         };
         let parentOtherStyle = {};
 
@@ -56,11 +56,11 @@ class CommonLayer {
                 'background-color': this.parentLayer.style.backgroundColor,
                 'background-image': this.parentLayer.style.backgroundImage ? `url(${path.join(this.imagePath, this.parentLayer.style.backgroundImage)}.png)` : null,
                 'background': this.parentLayer.style.linearGradientString,
-                'line-height': util.pxvalue(this.parentLayer.style.lineHeight),
+                'line-height': util.px2rem(this.parentLayer.style.lineHeight),
                 'border-color': this.parentLayer.style.borderColor,
-                'border-width': util.pxvalue(this.parentLayer.style.borderWidth),
+                'border-width': util.px2rem(this.parentLayer.style.borderWidth),
                 'border-style': this.parentLayer.style.borderStyle,
-                'border-radius': util.pxvalue(this.parentLayer.style.borderRadius),
+                'border-radius': util.px2rem(this.parentLayer.style.borderRadius),
             };
             let borderWidth = this.parentLayer.style.borderWidth || 0;
             if(this.parentLayer.style.borderPosition == 0) {
@@ -80,10 +80,10 @@ class CommonLayer {
         }
         let frameStyle = {
             'position': 'absolute',
-            'left': util.pxvalue(this.layer.frame.x),
-            'top': util.pxvalue(this.layer.frame.y),
-            'width': util.pxvalue(width),
-            'height': util.pxvalue(height),
+            'left': util.px2rem(this.layer.frame.x),
+            'top': util.px2rem(this.layer.frame.y),
+            'width': util.px2rem(width),
+            'height': util.px2rem(height),
             'transform': this.layer.style.transform ? this.layer.style.transform.join(' ') : null,
             'box-shadow': this.layer.style.boxShadow,
             'background': this.layer.style.linearGradientString,
