@@ -23,10 +23,8 @@ const handleArtBoard = (layer, pageName) => {
         styleRender(layer, null, '../');
         var html = htmlRender(layer, null, '../');
         html = template(html, layer);
-        fse.outputFile(`./output/html/${pageName}/artboard-${layer.name}.html`, html, e => {
-        });
-        fse.outputFile(`./output/html/${pageName}/artboard-${layer.name}.css`, StyleStore.toString(), (e) => {
-        });
+        fse.outputFileSync(`./output/html/${pageName}/artboard-${layer.name}.html`, html);
+        fse.outputFileSync(`./output/html/${pageName}/artboard-${layer.name}.css`, StyleStore.toString());
         outPages.push({
             name: layer.name,
             url: `./${pageName}/artboard-${layer.name}.html`
@@ -38,7 +36,7 @@ const handleArtBoard = (layer, pageName) => {
     }
 };
 
-module.exports = function (source) {
+module.exports = function (source, callback) {
     // 解压 sketch 文件
     exec(`rm -rf output/*;unzip -o ${source} -d output;`, (err, stdout, stderr) => {
         if(err) {
@@ -46,14 +44,11 @@ module.exports = function (source) {
             return;
         }
         // 复制图片到结果文件夹
-        fse.copy('./output/images', './output/html/images', err => {
-        });
+        fse.copySync('./output/images', './output/html/images');
         // 复制模板资源文件夹
-        fse.copy('./template/assets', './output/html/assets', err => {
-        });
+        fse.copySync('./template/assets', './output/html/assets');
         // 复制首页
-        fse.copy('./template/index.html', './output/html/index.html', err => {
-        });
+        fse.copySync('./template/index.html', './output/html/index.html');
         // 读取每个 page 的信息
         let files = fs.readdirSync('./output/pages');
         let fileStore = {};
@@ -74,17 +69,16 @@ module.exports = function (source) {
             }
         });
         // 输出模板页面 js 中的页面配置数据
-        fse.outputFile('./output/html/index.js', (() => {
+        fse.outputFileSync('./output/html/index.js', (() => {
             let r = 'window.data = [];\n';
             outPages.forEach((p) => {
                 r += `data.push({url:'${p.url}',title:'${p.name}',type:'folder'});\n`;
             });
             return r;
-        })(), e => {
-
-        });
-
+        })());
+        callback();
         exec(`open "${__dirname + '/output/html/index.html'}"`);
+
     });
 }
 

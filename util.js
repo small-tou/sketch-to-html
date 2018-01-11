@@ -5,7 +5,7 @@ var util = {
      * @returns {string}
      */
     color: function(color) {
-        return `rgba(${parseInt(color.red * 255)},${parseInt(color.green * 255)},${parseInt(color.blue * 255)},${color.alpha})`;
+        return `rgba(${parseInt(color.red * 255)},${parseInt(color.green * 255)},${parseInt(color.blue * 255)},${color.alpha==undefined?1:color.alpha})`;
     },
     /**
      * 是否正方形
