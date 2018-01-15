@@ -1,4 +1,5 @@
-# sketch to html
+# [sketch to html](https://github.com/xinyu198736/sketch-to-html)
+可以 100%（目前可能是99.9%） 从 sketch 转换成 html，比市面任何一个同类库功能更强大，完善中
 
 ## 使用
 

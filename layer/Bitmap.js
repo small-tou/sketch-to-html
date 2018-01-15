@@ -13,14 +13,11 @@ class BitmapLayer extends LayerProtocol {
             color: this.layer.style.color,
             'background-image': this.layer.style.backgroundImage ? `url(${path.join(this.imagePath, this.layer.style.backgroundImage)}.png)` : null,
             'background-color': this.layer.style.backgroundColor,
-            'background': this.layer.style.linearGradientString,
             'border-radius': util.px2rem(this.layer.style.borderRadius),
             'border-color': this.layer.style.borderColor,
             'border-width': util.px2rem(this.layer.style.borderWidth),
             'border-style': this.layer.style.borderStyle,
             'box-shadow': this.layer.style.boxShadow,
-            '-webkit-text-stroke-width': util.px2rem(this.layer.style.textStrokeWidth),
-            '-webkit-text-stroke-color': util.px2rem(this.layer.style.textStrokeColor)
         };
         let frameStyle = {
             position: 'absolute',
@@ -30,7 +27,6 @@ class BitmapLayer extends LayerProtocol {
             height: util.px2rem(this.layer.frame.height),
             'transform': this.layer.style.transform ? this.layer.style.transform.join(' ') : null,
             'box-shadow': this.layer.style.boxShadow,
-            'background': this.layer.style.linearGradientString,
             'opacity': this.layer.style.opacity
         };
         StyleStore.set(this.selector, {});
