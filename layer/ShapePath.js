@@ -1,13 +1,11 @@
 const util = require('../util');
 const StyleStore = require('../store/StyleStore');
 const path = require('path');
+const LayerProtocol = require('./LayerProtocol');
 
-class ShapePathLayer {
+class ShapePathLayer extends LayerProtocol {
     constructor () {
-        this.layer = {};
-        this.parentLayer = {};
-        this.selector = '';
-        this.imagePath = '';
+        super();
     }
 
     getStyle () {

@@ -1,13 +1,12 @@
 const util = require('../util');
+const LayerProtocol = require('./LayerProtocol');
 
-class ShapeGroupLayer {
-    constructor (){
-        this.layer = {};
-        this.parentLayer = {};
-        this.selector = '';
-        this.imagePath = '';
+class ShapeGroupLayer extends LayerProtocol {
+    constructor () {
+        super();
     }
-    getStyle (){
+
+    getStyle () {
         let otherStyl;
         let frameStyle = {
             position: 'absolute',
@@ -22,12 +21,13 @@ class ShapeGroupLayer {
             'background': this.layer.style.linearGradientString,
             'opacity': this.layer.style.opacity
         };
-        if (this.layer.style.backgroundImage && this.layer.childrens.length == 1) {
+        if(this.layer.style.backgroundImage && this.layer.childrens.length == 1) {
             this.layer.childrens[0].style.backgroundImage = this.layer.style.backgroundImage;
             this.layer.style.backgroundImage = null;
         }
         return Object.assign({}, frameStyle);
     }
+
     getHtml (childString) {
         let layer = this.layer;
         return `<div id="${layer.id}" class="${layer.name}" style="${util.getStyleString(layer.finalStyle)}" >${childString}</div>`;

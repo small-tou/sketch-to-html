@@ -1,5 +1,5 @@
 const StyleStore = require('../store/StyleStore');
-const Layer = require('../layer/Layer');
+const Layer = require('../layer/LayerFactory');
 const SymbolStore = require('../store/SymbolStore');
 const htmlRender = function (layer, parentLayer, imagePath = '') {
     if (!layer.isVisible) {

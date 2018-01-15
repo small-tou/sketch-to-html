@@ -64,6 +64,8 @@ $ npm run example
 ## 结构
 
 ```bash
+.
+├── Makefile
 ├── README.md
 ├── example.js                 示例
 ├── index.js                   入口
@@ -71,16 +73,16 @@ $ npm run example
 │   ├── Bitmap.js
 │   ├── Common.js
 │   ├── Group.js
-│   ├── Layer.js
+│   ├── LayerFactory.js        图层工厂方法，供外部调用
+│   ├── LayerProtocol.js       图层协议类，供图层继承
 │   ├── ShapeGroup.js
-│   └── ShapePath.js
-├── package.json
+│   ├── ShapePath.js
+│   └── Text.js
 ├── parser                     一些用来做解析的方法
-│   ├── NSArchiveParser.js
-│   ├── colorParser.js
-│   ├── layerParser.js
-│   ├── pathParser.js
-│   └── styleParser.js
+│   ├── NSArchiveParser.js     解析 sketch 内的样式编码
+│   ├── layerParser.js         解析图层结构
+│   ├── pathParser.js          解析 svg 图层
+│   └── styleParser.js         解析样式
 ├── render                     生成样式表和渲染html的方法
 │   ├── htmlRender.js
 │   └── styleRender.js
@@ -88,10 +90,12 @@ $ npm run example
 │   ├── StyleStore.js
 │   └── SymbolStore.js
 ├── template                   模板
+│   ├── assets
 │   ├── index.html
 │   ├── index.js
 │   └── template.js
 └── util.js                    工具方法
+
 ```
 ## 中间转换的数据结构
 

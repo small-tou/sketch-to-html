@@ -1,13 +1,12 @@
 const util = require('../util');
+const LayerProtocol = require('./LayerProtocol');
 
-class GroupLayer {
-    constructor (){
-        this.layer = {};
-        this.parentLayer = {};
-        this.selector = '';
-        this.imagePath = '';
+class GroupLayer extends LayerProtocol {
+    constructor () {
+        super();
     }
-    getStyle (){
+
+    getStyle () {
         let otherStyl;
         let frameStyle = {
             position: 'absolute',
@@ -24,6 +23,7 @@ class GroupLayer {
         };
         return Object.assign({}, frameStyle);
     }
+
     getHtml (childString) {
         let layer = this.layer;
         return `<div id="${layer.id}" class="${layer.name}" style="${util.getStyleString(layer.finalStyle)}" >${childString}</div>`;

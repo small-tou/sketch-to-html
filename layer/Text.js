@@ -3,14 +3,15 @@ const StyleStore = require('../store/StyleStore');
 const path = require('path');
 const LayerProtocol = require('./LayerProtocol');
 
-class CommonLayer extends LayerProtocol {
+class TextLayer extends LayerProtocol {
     constructor () {
         super();
     }
 
     getStyle () {
         let width = this.layer.frame.width, height = this.layer.frame.height;
-        if(this.layer.type == 'text' && this.layer.style.fontSize && this.layer.style.fontSize < 12) {
+        // 处理小于12px的文字图层
+        if(this.layer.style.fontSize && this.layer.style.fontSize < 12) {
             this.layer.style.fontSize *= 5;
             width *= 5;
             height *= 5;
@@ -30,17 +31,9 @@ class CommonLayer extends LayerProtocol {
         }
         let otherStyle = {
             'color': this.layer.style.color,
-            'background-image': this.layer.style.backgroundImage ? `url(${path.join(this.imagePath, this.layer.style.backgroundImage)}.png)` : null,
-            'background-color': this.layer.style.backgroundColor,
-            'background': this.layer.style.linearGradientString,
-            'border-radius': util.px2rem(this.layer.style.borderRadius),
             'line-height': util.px2rem(this.layer.style.lineHeight) || 'normal',
-            'margin-top': util.px2rem(this.layer.style.marginTop),
             'font-size': util.px2rem(this.layer.style.fontSize),
             'font-family': this.layer.style.fontFamily,
-            'border-color': this.layer.style.borderColor,
-            'border-width': util.px2rem(this.layer.style.borderWidth),
-            'border-style': this.layer.style.borderStyle,
             'box-shadow': this.layer.style.boxShadow,
             'letter-spacing': util.px2rem(this.layer.style.letterSpacing),
             '-webkit-text-stroke-width': util.px2rem(this.layer.style.textStrokeWidth),
@@ -108,4 +101,4 @@ class CommonLayer extends LayerProtocol {
     }
 }
 
-module.exports = CommonLayer;
+module.exports = TextLayer;
