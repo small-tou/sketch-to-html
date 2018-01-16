@@ -3,6 +3,9 @@ const pathParser = function (layer) {
         return null;
     }
     let path = layer.path;
+    if(!path.points || !path.points.length) {
+        return null;
+    }
     let {x, y} = getXY(path.points[0].point,layer);
     let ret = `M${toS(x)},${toS(y)}`;
     let n = path['isClosed'] ? path.points.length + 1 : path.points.length;
