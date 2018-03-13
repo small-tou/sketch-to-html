@@ -41,23 +41,15 @@ const styleParser = function(style, attributedString, layer) {
     });
   }
 
-  if (
-    style.textStyle &&
-    attributedString &&
-    attributedString.archivedAttributedString
-  ) {
-    const decodedAttributedString = parseArchive(
-      attributedString.archivedAttributedString._archive
-    );
+  if (style.textStyle && attributedString && attributedString.archivedAttributedString) {
+    const decodedAttributedString = parseArchive(attributedString.archivedAttributedString._archive);
     let encodedAttributes;
     let decodedNSParagraphStyle;
     let decodedMSAttributedStringFontAttribute;
     if (style.textStyle.encodedAttributes) {
       encodedAttributes = style.textStyle.encodedAttributes;
       if (encodedAttributes.NSParagraphStyle)
-        decodedNSParagraphStyle = parseArchive(
-          encodedAttributes.NSParagraphStyle._archive
-        );
+        decodedNSParagraphStyle = parseArchive(encodedAttributes.NSParagraphStyle._archive);
       if (encodedAttributes.MSAttributedStringFontAttribute)
         decodedMSAttributedStringFontAttribute = parseArchive(
           encodedAttributes.MSAttributedStringFontAttribute._archive
@@ -65,13 +57,11 @@ const styleParser = function(style, attributedString, layer) {
     }
 
     if (
-      decodedAttributedString.NSAttributes
-        .MSAttributedStringColorDictionaryAttribute ||
+      decodedAttributedString.NSAttributes.MSAttributedStringColorDictionaryAttribute ||
       encodedAttributes.MSAttributedStringColorAttribute
     ) {
       result.color = colorParser(
-        decodedAttributedString.NSAttributes
-          .MSAttributedStringColorDictionaryAttribute ||
+        decodedAttributedString.NSAttributes.MSAttributedStringColorDictionaryAttribute ||
           encodedAttributes.MSAttributedStringColorAttribute
       );
     } else {
@@ -79,23 +69,16 @@ const styleParser = function(style, attributedString, layer) {
     }
 
     if (decodedAttributedString.NSAttributes.MSAttributedStringFontAttribute) {
-      let fontAttr =
-        decodedAttributedString.NSAttributes.MSAttributedStringFontAttribute
-          .NSFontDescriptorAttributes;
+      let fontAttr = decodedAttributedString.NSAttributes.MSAttributedStringFontAttribute.NSFontDescriptorAttributes;
       result.fontSize = fontAttr.NSFontSizeAttribute;
       if (fontAttr.NSFontNameAttribute) {
         result.fontFamily = fontAttr.NSFontNameAttribute;
       }
     }
     if (decodedMSAttributedStringFontAttribute) {
-      result.fontSize =
-        decodedMSAttributedStringFontAttribute.NSFontDescriptorAttributes.NSFontSizeAttribute;
-      if (
-        decodedMSAttributedStringFontAttribute.NSFontDescriptorAttributes
-          .NSFontNameAttribute
-      ) {
-        result.fontFamily =
-          decodedMSAttributedStringFontAttribute.NSFontDescriptorAttributes.NSFontNameAttribute;
+      result.fontSize = decodedMSAttributedStringFontAttribute.NSFontDescriptorAttributes.NSFontSizeAttribute;
+      if (decodedMSAttributedStringFontAttribute.NSFontDescriptorAttributes.NSFontNameAttribute) {
+        result.fontFamily = decodedMSAttributedStringFontAttribute.NSFontDescriptorAttributes.NSFontNameAttribute;
       }
     }
     if (decodedAttributedString.NSAttributes.NSKern) {
@@ -105,16 +88,11 @@ const styleParser = function(style, attributedString, layer) {
       result.letterSpacing = encodedAttributes.NSKern;
     }
     if (decodedAttributedString.NSAttributes.NSParagraphStyle) {
-      const paragraphSpacing =
-        decodedAttributedString.NSAttributes.NSParagraphStyle
-          .NSParagraphSpacing;
-      const maxLineHeight =
-        decodedAttributedString.NSAttributes.NSParagraphStyle.NSMaxLineHeight;
-      const minLineHeight =
-        decodedAttributedString.NSAttributes.NSParagraphStyle.NSMinLineHeight;
+      const paragraphSpacing = decodedAttributedString.NSAttributes.NSParagraphStyle.NSParagraphSpacing;
+      const maxLineHeight = decodedAttributedString.NSAttributes.NSParagraphStyle.NSMaxLineHeight;
+      const minLineHeight = decodedAttributedString.NSAttributes.NSParagraphStyle.NSMinLineHeight;
       if (decodedAttributedString.NSAttributes.NSParagraphStyle.NSAlignment) {
-        result.textAlign =
-          decodedAttributedString.NSAttributes.NSParagraphStyle.NSAlignment;
+        result.textAlign = decodedAttributedString.NSAttributes.NSParagraphStyle.NSAlignment;
       } else {
         result.textAlign = 0;
       }
@@ -144,8 +122,7 @@ const styleParser = function(style, attributedString, layer) {
           to.x = to.x * layer.frame.width;
           to.y = to.y * layer.frame.height;
           linearGradient.stops = [];
-          let angle = (linearGradient.angle =
-            Math.atan(to.x - from.x) / (to.y - from.y) * 180 / Math.PI);
+          let angle = (linearGradient.angle = Math.atan(to.x - from.x) / (to.y - from.y) * 180 / Math.PI);
           let gradientLength = layer.frame.height / Math.cos(angle);
           gradient.stops.forEach(stop => {
             const hex = util.color(stop.color);
@@ -157,9 +134,7 @@ const styleParser = function(style, attributedString, layer) {
           });
           linearGradient.stops.reverse();
           let beginLength = from.x * Math.sin(angle);
-          let endLength =
-            beginLength +
-            Math.sqrt(Math.pow(to.x - from.x, 2) + Math.pow(to.y - from.y, 2));
+          let endLength = beginLength + Math.sqrt(Math.pow(to.x - from.x, 2) + Math.pow(to.y - from.y, 2));
 
           // console.log(from,to,gradientLength,beginLength,endLength,angle);
           let beginStop = {
@@ -172,15 +147,12 @@ const styleParser = function(style, attributedString, layer) {
           };
 
           linearGradient.stops.forEach(s => {
-            s.offset =
-              s.offset * (endStop.offset - beginStop.offset) + beginStop.offset;
+            s.offset = s.offset * (endStop.offset - beginStop.offset) + beginStop.offset;
           });
           linearGradient.stops.unshift(beginStop);
           linearGradient.stops.push(endStop);
           result.linearGradient = linearGradient;
-          result.linearGradientString = `linear-gradient(${
-            linearGradient.angle
-          }deg, ${linearGradient.stops
+          result.linearGradientString = `linear-gradient(${linearGradient.angle}deg, ${linearGradient.stops
             .map(s => {
               return s.color + ' ' + s.offset * 100 + '%';
             })
@@ -201,9 +173,9 @@ const styleParser = function(style, attributedString, layer) {
   if (style.shadows) {
     style.shadows.forEach(shadow => {
       if (shadow.isEnabled) {
-        result.boxShadow = `${shadow.offsetX}px ${shadow.offsetY}px ${
-          shadow.blurRadius
-        }px ${colorParser(shadow.color)}`;
+        result.boxShadow = `${shadow.offsetX}px ${shadow.offsetY}px ${shadow.blurRadius}px ${colorParser(
+          shadow.color
+        )}`;
       }
     });
   }
