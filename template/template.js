@@ -4,6 +4,13 @@ module.exports = function(html,layer) {
 <head>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width,minimal-ui">
 <link rel="stylesheet" href="./artboard-${layer.name}.css" type="text/css" />
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+</style>
 </head>
 <body >
 ${html}
