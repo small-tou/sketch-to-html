@@ -151,7 +151,7 @@ border-radius:0.053333rem;
 .bang_zhu_zhong_xin ._1______TONOT_App__2_  {
     position:absolute;
 left:0.426667rem;
-top:0.840000rem;
+top:0.826667rem;
 width:4.200000rem;
 height:1.200000rem;
 color:rgba(142,142,142,1);
@@ -164,7 +164,7 @@ letter-spacing:0.002961rem;
 .bang_zhu_zhong_xin .TONOT___________4GB_  {
     position:absolute;
 left:0.426667rem;
-top:3.000000rem;
+top:2.986667rem;
 width:4.200000rem;
 height:0.240000rem;
 color:rgba(142,142,142,1);
@@ -177,7 +177,7 @@ letter-spacing:0.002961rem;
 .bang_zhu_zhong_xin .zai_gong_gong_WiFi____________  {
     position:absolute;
 left:0.426667rem;
-top:5.400000rem;
+top:5.386667rem;
 width:4.200000rem;
 height:0.480000rem;
 color:rgba(142,142,142,1);
@@ -190,7 +190,7 @@ letter-spacing:0.002961rem;
 .bang_zhu_zhong_xin ._4_MB_S_____WiFi_____  {
     position:absolute;
 left:0.426667rem;
-top:4.200000rem;
+top:4.186667rem;
 width:4.200000rem;
 height:0.240000rem;
 color:rgba(142,142,142,1);
@@ -203,7 +203,7 @@ letter-spacing:0.002961rem;
 .bang_zhu_zhong_xin .da_kai_shou_ji_lan_ya____TONOT_App  {
     position:absolute;
 left:0.426667rem;
-top:6.840000rem;
+top:6.826667rem;
 width:4.200000rem;
 height:0.480000rem;
 color:rgba(142,142,142,1);
@@ -212,4 +212,7 @@ font-size:0.173333rem;
 font-family:PingFangSC-Regular;
 letter-spacing:0.002961rem;
 
+}
+.bang_zhu_zhong_xin .Bitmap  {
+    
 }
