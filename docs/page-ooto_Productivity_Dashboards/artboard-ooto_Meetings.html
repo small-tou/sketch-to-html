@@ -233,6 +233,7 @@
     function refreshRem() {
         // 获取当前窗口的宽度
         var width = docEl.getBoundingClientRect().width;
+        width = width * win.devicePixelRatio;
         // 大于640px 按640算
         if (width > 750) { width = 750 }
         var rem = width / 10;  // cms 只要把这行改成  var rem = width /640 * 100 
