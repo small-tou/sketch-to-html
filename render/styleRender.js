@@ -1,12 +1,17 @@
 const StyleStore = require('../store/StyleStore');
 const Layer = require('../layer/LayerFactory');
 const SymbolStore = require('../store/SymbolStore');
+const path = require('path');
 const styleRender = function (layer, parentLayer, imagePath = '', selector = '') {
     if (!layer.isVisible) {
         return '';
     }
     if (layer.type == 'symbolInstance') {
+        try{
         layer.childrens = SymbolStore.get(layer.symbolID).childrens;
+        }catch(e){
+            layer.childrens=[];
+        }
     }
     selector = selector + '.' + layer.name + ' ';
 
