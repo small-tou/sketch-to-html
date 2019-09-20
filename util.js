@@ -87,7 +87,7 @@ var util = {
      */
     isRect(layer) {
         const path = layer.path;
-        if (path && path.points && path.points.length !== 4) {
+        if (!path || !path.points || path.points.length !== 4) {
             return false;
         }
         const rectPoints = path.points.map(x => this.toPoint(x.point, layer));
