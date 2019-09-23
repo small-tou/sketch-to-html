@@ -24,7 +24,7 @@ class GroupLayer extends LayerProtocol {
 
     getHtml (childString) {
         let layer = this.layer;
-        return `<div id="${layer.id}" class="${layer.name}" style="${util.getStyleString(layer.finalStyle)}" >${childString}</div>`;
+        return `<div class="${layer.name}" style="${util.getStyleString(layer.finalStyle)}" >${childString}</div>`;
     }
 }
 

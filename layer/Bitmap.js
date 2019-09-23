@@ -48,7 +48,7 @@ class BitmapLayer extends LayerProtocol {
         }
         delete layer.finalStyle['background-color'];
         layer.finalStyle.overflow = 'hidden';
-        return `<div id="${layer.id}" style="${util.getStyleString(layer.finalStyle)}" class="${layer.name}"><img  style="${util.getStyleString(imgStyle)}" src="${path.join(this.imagePath, layer.image)}"  ></img></div>`;
+        return `<div style="${util.getStyleString(layer.finalStyle)}" class="${layer.name}"><img  style="${util.getStyleString(imgStyle)}" src="${path.join(this.imagePath, layer.image)}"  ></img></div>`;
 
     }
 }

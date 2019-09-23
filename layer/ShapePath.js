@@ -11,7 +11,7 @@ class ShapePathLayer extends LayerProtocol {
     getStyle () {
         let otherStyle = {
             color: this.layer.style.color,
-            'background-image': this.layer.style.backgroundImage ? `url(${path.join(this.imagePath, this.layer.style.backgroundImage)}` : null,
+            'background-image': this.layer.style.backgroundImage ? `url(${path.join(this.imagePath, this.layer.style.backgroundImage)})` : null,
             'background-color': this.layer.style.backgroundColor,
             'background': this.layer.style.linearGradientString,
             'border-radius': util.px2rem(this.layer.style.borderRadius),
@@ -60,7 +60,7 @@ class ShapePathLayer extends LayerProtocol {
     getHtml () {
         let layer = this.layer;
         return `
-<svg id="${layer.id}" version="1.1" xmlns="http://www.w3.org/2000/svg" class="${layer.name}" style="${util.getStyleString(layer.finalStyle)}"  >
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="${layer.name}" style="${util.getStyleString(layer.finalStyle)}"  >
     <path d="${layer.path}" />
 </svg>`;
     }
