@@ -22,6 +22,7 @@ const styleRender = function (layer, parentLayer, imagePath = '', selector = '')
     layerInstance.imagePath = imagePath;
     layerInstance.selector = selector;
     layer.finalStyle = layerInstance.getStyle();
+    if(layer.type=='artboard')layer.finalStyle.overflow = 'hidden';
     if (layer.isMask) {
         // 如果当前是一个遮罩，给其父元素一个 mask-image ，并将此layer的frame赋值给父元素。
         if (layer.style.linearGradientString) {

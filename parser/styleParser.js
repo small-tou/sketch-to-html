@@ -112,7 +112,7 @@ const styleParser = function (style, attributedString, layer) {
         result.text = decodedAttributedString.NSString.split(/\n/g).join(`<div style="height:${util.px2rem(result.paragraphSpacing)}"></div>`);
     }else if(style.textStyle){
         try{
-            const colorArray = style.textStyle.MSAttributedStringColorAttribute;
+            const colorArray = style.textStyle.encodedAttributes.MSAttributedStringColorAttribute;
             const colors = {};
             colors.red = parseFloat(colorArray['red']);
             colors.green = parseFloat(colorArray['green']);
@@ -128,6 +128,12 @@ const styleParser = function (style, attributedString, layer) {
             result.fontFamily = fontAttr.fontFamily;
         }catch(e){
             result.fontSize = fontAttr.size || '15px';
+        }
+        try{
+            result.letterSpacing = style.textStyle.encodedAttributes.kerning;
+            result.lineHeight = layer.frame.height
+        }catch(e){
+            result.letterSpacing = 0;
         }
         try{
             result.textAlign = style.textStyle.paragraphStyle.alignment;
