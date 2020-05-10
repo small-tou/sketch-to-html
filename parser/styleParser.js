@@ -95,6 +95,9 @@ const styleParser = function (style, attributedString, layer) {
         if (encodedAttributes.NSKern ){
             result.letterSpacing = encodedAttributes.NSKern;
         }
+	if (encodedAttributes.MSAttributedStringColorDictionaryAttribute) {
+            result.color = colorParser(encodedAttributes.MSAttributedStringColorDictionaryAttribute);
+        }
         if (decodedAttributedString.NSAttributes.NSParagraphStyle) {
             const paragraphSpacing = decodedAttributedString.NSAttributes.NSParagraphStyle.NSParagraphSpacing;
             const maxLineHeight = decodedAttributedString.NSAttributes.NSParagraphStyle.NSMaxLineHeight;

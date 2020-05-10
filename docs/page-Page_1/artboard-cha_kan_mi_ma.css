@@ -1,0 +1,904 @@
+
+.cha_kan_mi_ma  {
+    position:absolute;
+width:5.000000rem;
+height:8.893333rem;
+background-color:rgba(255,255,255,1);
+
+}
+.cha_kan_mi_ma .Rectangle_3_1 .Path_26  {
+    background-color:rgba(215,215,215,1);
+position:absolute;
+width:5.000000rem;
+height:0.586667rem;
+
+}
+.cha_kan_mi_ma .fan_hui_shang_yi_jiicon_1  {
+    position:absolute;
+left:0.200000rem;
+top:0.413333rem;
+width:0.293333rem;
+height:0.293333rem;
+transform:rotateY(180deg);
+
+}
+.cha_kan_mi_ma .fan_hui_shang_yi_jiicon_1 .Triangle_2_3 .Mask_3 .Path_59  {
+    background-color:rgba(215,215,215,1);
+position:absolute;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .fan_hui_shang_yi_jiicon_1 .Triangle_2_3 .Triangle_2_4 .Path_60  {
+    fill:none;
+stroke:rgba(13,13,13,1);
+width:0.213333rem;
+height:0.092308rem;
+stroke-width:1px;
+position:absolute;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .guan_li_she_bei_1  {
+    position:absolute;
+left:2.013333rem;
+top:0.386667rem;
+width:0.986667rem;
+height:0.333333rem;
+color:rgba(33,33,33,1);
+line-height:normal;
+font-size:0.240000rem;
+font-family:PingFangSC-Medium;
+letter-spacing:0.004100rem;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1  {
+    position:absolute;
+width:5.000000rem;
+height:0.266667rem;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Right_Detail .battery .Battery .Battery_Outline .Path_50  {
+    fill:none;
+stroke:rgba(0,0,0,1);
+width:0.320000rem;
+height:0.153333rem;
+stroke-width:1px;
+position:absolute;
+border-radius:0.033333rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Right_Detail .battery .Battery .Battery_Connector .Oval_3  {
+    fill:rgba(0,0,0,1);
+width:0.060000rem;
+height:0.060000rem;
+stroke-width:1;
+position:absolute;
+left:-0.040000rem;
+top:-0.001707rem;
+border-radius:0.030000rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Right_Detail .battery .Battery .Battery_Connector .Mask  {
+    fill:rgba(0,0,0,1);
+width:0.026667rem;
+height:0.080000rem;
+stroke-width:1;
+position:absolute;
+top:-0.015040rem;
+transform:rotateY(180deg);
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Right_Detail .battery .Battery .Battery_Fill .Path_51  {
+    background-color:rgba(0,0,0,1);
+position:absolute;
+width:0.266667rem;
+height:0.100000rem;
+border-radius:0.013333rem;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Right_Detail .battery ._100_  {
+    position:absolute;
+top:0.006667rem;
+width:0.440000rem;
+height:0.186667rem;
+color:rgba(2,2,2,1);
+line-height:normal;
+font-size:0.160000rem;
+font-family:SFProText-Regular;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Right_Detail .bluetooth .Path_52  {
+    fill:rgba(0,0,0,1);
+width:0.093333rem;
+height:0.160000rem;
+stroke-width:1;
+position:absolute;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Right_Detail .bluetooth .Path_53  {
+    fill:rgba(0,0,0,1);
+width:0.020000rem;
+height:0.035067rem;
+stroke-width:1;
+position:absolute;
+left:0.053333rem;
+top:0.031600rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Right_Detail .bluetooth .Path_54  {
+    fill:rgba(0,0,0,1);
+width:0.020000rem;
+height:0.036667rem;
+stroke-width:1;
+position:absolute;
+left:0.053333rem;
+top:0.093333rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Time  {
+    position:absolute;
+left:2.093333rem;
+top:0.006667rem;
+width:0.653333rem;
+height:0.186667rem;
+color:rgba(2,2,2,1);
+line-height:normal;
+font-size:0.160000rem;
+font-family:SFProText-Semibold;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Left_Detail .Signal .Bar_4  {
+    fill:rgba(0,0,0,1);
+width:0.040000rem;
+height:0.133333rem;
+stroke-width:1;
+position:absolute;
+left:0.180000rem;
+border-radius:0.010000rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Left_Detail .Signal .Bar_3  {
+    fill:rgba(0,0,0,1);
+width:0.040000rem;
+height:0.106667rem;
+stroke-width:1;
+position:absolute;
+left:0.120000rem;
+top:0.026667rem;
+border-radius:0.010000rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Left_Detail .Signal .Bar_2  {
+    fill:rgba(0,0,0,1);
+width:0.040000rem;
+height:0.080000rem;
+stroke-width:1;
+position:absolute;
+left:0.060000rem;
+top:0.053333rem;
+border-radius:0.010000rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Left_Detail .Signal .Bar_1  {
+    fill:rgba(0,0,0,1);
+width:0.040000rem;
+height:0.060000rem;
+stroke-width:1;
+position:absolute;
+top:0.073333rem;
+border-radius:0.010000rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Left_Detail .Wifi .Top__Outer  {
+    fill:rgba(0,0,0,1);
+stroke:rgba(0,0,0,1);
+width:0.260000rem;
+height:0.260000rem;
+stroke-width:1px;
+position:absolute;
+left:-0.043211rem;
+border-radius:0.130000rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Left_Detail .Wifi .Top__Inner  {
+    fill:rgba(0,0,0,1);
+stroke:rgba(0,0,0,1);
+width:0.226667rem;
+height:0.226667rem;
+stroke-width:1px;
+position:absolute;
+left:-0.026545rem;
+top:0.016667rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Left_Detail .Wifi .Middle__Outer  {
+    fill:rgba(0,0,0,1);
+stroke:rgba(0,0,0,1);
+width:0.170000rem;
+height:0.170000rem;
+stroke-width:1px;
+position:absolute;
+left:0.001722rem;
+top:0.045067rem;
+border-radius:0.085000rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Left_Detail .Wifi .Middle__Inner  {
+    fill:rgba(0,0,0,1);
+stroke:rgba(0,0,0,1);
+width:0.136667rem;
+height:0.136667rem;
+stroke-width:1px;
+position:absolute;
+left:0.018389rem;
+top:0.061600rem;
+border-radius:0.068333rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Left_Detail .Wifi .Bottom  {
+    fill:rgba(0,0,0,1);
+stroke:rgba(0,0,0,1);
+width:0.076667rem;
+height:0.076667rem;
+stroke-width:1px;
+position:absolute;
+left:0.048455rem;
+top:0.091667rem;
+border-radius:0.038333rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Light_Status_Bar_1 .Group_8 .Left_Detail .Wifi .Wifi_1  {
+    fill:rgba(0,0,0,1);
+stroke:rgba(0,0,0,1);
+width:0.253333rem;
+height:0.126667rem;
+stroke-width:1px;
+position:absolute;
+left:-0.039878rem;
+top:-0.006667rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Rectangle_2_1 .Path_27  {
+    background-color:rgba(215,215,215,1);
+position:absolute;
+width:5.000000rem;
+height:6.893333rem;
+
+}
+.cha_kan_mi_ma .Rectangle_4_2 .Path_28  {
+    position:absolute;
+width:5.000000rem;
+height:0.746667rem;
+
+}
+.cha_kan_mi_ma .Rectangle_4_3 .Path_29  {
+    position:absolute;
+width:5.000000rem;
+height:0.746667rem;
+
+}
+.cha_kan_mi_ma .Rectangle_4_Copy_4_1 .Path_30  {
+    position:absolute;
+width:5.000000rem;
+height:1.200000rem;
+
+}
+.cha_kan_mi_ma .UISwitchOn_1 .Background_2_1 .Path_31  {
+    background-color:rgba(128,128,255,1);
+border-color:rgba(128,128,255,1);
+border-width:0.026667rem;
+border-style:solid;
+position:absolute;
+width:0.626667rem;
+height:0.360000rem;
+border-radius:0.266667rem;
+
+}
+.cha_kan_mi_ma .UISwitchOn_1 .Knob_2_1 .Path_32  {
+    background-color:rgba(255,255,255,1);
+position:absolute;
+width:0.360000rem;
+height:0.360000rem;
+border-radius:0.180000rem;
+
+}
+.cha_kan_mi_ma .Rectangle_4_Copy_1 .Path_33  {
+    position:absolute;
+width:5.000000rem;
+height:0.746667rem;
+
+}
+.cha_kan_mi_ma .Group_13_1 .Rectangle_10_1 .Path_34  {
+    background-color:rgba(215,215,215,1);
+position:absolute;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .Group_13_1 .Oval_2_1 .Path_35  {
+    border-color:rgba(192,192,192,1);
+border-width:0.013333rem;
+border-style:solid;
+position:absolute;
+width:0.213333rem;
+height:0.213333rem;
+border-radius:0.120000rem;
+
+}
+.cha_kan_mi_ma .duan_shi_pin_1  {
+    position:absolute;
+left:3.293333rem;
+top:3.920000rem;
+width:0.613333rem;
+height:0.280000rem;
+color:rgba(142,142,142,1);
+line-height:normal;
+font-size:0.200000rem;
+font-family:PingFangSC-Regular;
+letter-spacing:0.003417rem;
+
+}
+.cha_kan_mi_ma .chang_shi_pin_1  {
+    position:absolute;
+left:4.186667rem;
+top:3.920000rem;
+width:0.613333rem;
+height:0.280000rem;
+color:rgba(128,128,255,1);
+line-height:normal;
+font-size:0.200000rem;
+font-family:PingFangSC-Medium;
+letter-spacing:0.003417rem;
+
+}
+.cha_kan_mi_ma .Rectangle_20_1 .Path_36  {
+    background-color:rgba(192,192,192,1);
+position:absolute;
+width:0.013333rem;
+height:0.133333rem;
+border-radius:0.013333rem;
+
+}
+.cha_kan_mi_ma .Rectangle_4_Copy_2_1 .Path_38  {
+    position:absolute;
+width:5.000000rem;
+height:0.746667rem;
+
+}
+.cha_kan_mi_ma .Rectangle_4_Copy_3_1 .Path_39  {
+    position:absolute;
+width:5.000000rem;
+height:0.746667rem;
+
+}
+.cha_kan_mi_ma .Rectangle_4_Copy_5_1 .Path_40  {
+    position:absolute;
+width:5.000000rem;
+height:0.746667rem;
+
+}
+.cha_kan_mi_ma .xiu_gai_bei_zhu_1  {
+    position:absolute;
+left:0.200000rem;
+top:1.226667rem;
+width:0.826667rem;
+height:0.280000rem;
+color:rgba(33,33,33,1);
+line-height:normal;
+font-size:0.200000rem;
+font-family:PingFangSC-Regular;
+letter-spacing:0.003417rem;
+
+}
+.cha_kan_mi_ma .da_kaiicon_copy_1  {
+    position:absolute;
+left:4.506667rem;
+top:1.213333rem;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .da_kaiicon_copy_1 .Triangle_2 .Mask_1 .Path_55  {
+    background-color:rgba(215,215,215,1);
+position:absolute;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .da_kaiicon_copy_1 .Triangle_2 .Triangle_2_1 .Path_56  {
+    fill:none;
+stroke:rgba(13,13,13,1);
+width:0.173333rem;
+height:0.066667rem;
+stroke-width:1px;
+position:absolute;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .da_kaiicon_copy_2_1  {
+    position:absolute;
+left:4.506667rem;
+top:4.653333rem;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .da_kaiicon_copy_2_1 .Triangle_2 .Mask_1 .Path_55  {
+    background-color:rgba(215,215,215,1);
+position:absolute;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .da_kaiicon_copy_2_1 .Triangle_2 .Triangle_2_1 .Path_56  {
+    fill:none;
+stroke:rgba(13,13,13,1);
+width:0.173333rem;
+height:0.066667rem;
+stroke-width:1px;
+position:absolute;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .da_kaiicon_copy_3_1  {
+    position:absolute;
+left:4.506667rem;
+top:5.400000rem;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .da_kaiicon_copy_3_1 .Triangle_2 .Mask_1 .Path_55  {
+    background-color:rgba(215,215,215,1);
+position:absolute;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .da_kaiicon_copy_3_1 .Triangle_2 .Triangle_2_1 .Path_56  {
+    fill:none;
+stroke:rgba(13,13,13,1);
+width:0.173333rem;
+height:0.066667rem;
+stroke-width:1px;
+position:absolute;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .da_kaiicon_copy_4_1  {
+    position:absolute;
+left:4.506667rem;
+top:6.146667rem;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .da_kaiicon_copy_4_1 .Triangle_2 .Mask_1 .Path_55  {
+    background-color:rgba(215,215,215,1);
+position:absolute;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .da_kaiicon_copy_4_1 .Triangle_2 .Triangle_2_1 .Path_56  {
+    fill:none;
+stroke:rgba(13,13,13,1);
+width:0.173333rem;
+height:0.066667rem;
+stroke-width:1px;
+position:absolute;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .yu_yin_ti_shi_1  {
+    position:absolute;
+left:0.200000rem;
+top:1.973333rem;
+width:0.826667rem;
+height:0.280000rem;
+color:rgba(33,33,33,1);
+line-height:normal;
+font-size:0.200000rem;
+font-family:PingFangSC-Regular;
+letter-spacing:0.003417rem;
+
+}
+.cha_kan_mi_ma .pai_she_mo_shi_1  {
+    position:absolute;
+left:0.200000rem;
+top:3.920000rem;
+width:0.826667rem;
+height:0.280000rem;
+color:rgba(33,33,33,1);
+line-height:normal;
+font-size:0.200000rem;
+font-family:PingFangSC-Regular;
+letter-spacing:0.003417rem;
+
+}
+.cha_kan_mi_ma .Group_3_Copy_3_1 .gu_jian_geng_xin_1  {
+    position:absolute;
+width:0.826667rem;
+height:0.280000rem;
+color:rgba(33,33,33,1);
+line-height:normal;
+font-size:0.200000rem;
+font-family:PingFangSC-Regular;
+letter-spacing:0.003417rem;
+
+}
+.cha_kan_mi_ma .Group_3_Copy_3_1 .Oval_7_Copy_1 .Path_41  {
+    background-color:rgba(255,98,98,1);
+border-color:rgba(255,255,255,1);
+border-width:0.026667rem;
+border-style:solid;
+position:absolute;
+width:0.106667rem;
+height:0.106667rem;
+border-radius:0.066667rem;
+
+}
+.cha_kan_mi_ma .Group_3_Copy_4_1 .yan_jing_mi_ma_1  {
+    position:absolute;
+width:0.826667rem;
+height:0.280000rem;
+color:rgba(44,44,44,1);
+line-height:normal;
+font-size:0.200000rem;
+font-family:PingFangSC-Regular;
+letter-spacing:0.003417rem;
+
+}
+.cha_kan_mi_ma .Group_3_Copy_5_1 .jie_chu_bang_ding_1  {
+    position:absolute;
+width:0.826667rem;
+height:0.280000rem;
+color:rgba(33,33,33,1);
+line-height:normal;
+font-size:0.200000rem;
+font-family:PingFangSC-Regular;
+letter-spacing:0.003417rem;
+
+}
+.cha_kan_mi_ma .karey_1  {
+    position:absolute;
+left:3.986667rem;
+top:1.226667rem;
+width:0.520000rem;
+height:0.280000rem;
+color:rgba(123,123,123,1);
+line-height:normal;
+font-size:0.200000rem;
+font-family:PingFangSC-Regular;
+letter-spacing:0.003417rem;
+
+}
+.cha_kan_mi_ma ._1_0_0_1  {
+    position:absolute;
+left:4.053333rem;
+top:4.666667rem;
+width:0.453333rem;
+height:0.280000rem;
+color:rgba(123,123,123,1);
+line-height:normal;
+font-size:0.200000rem;
+font-family:PingFangSC-Regular;
+letter-spacing:0.003417rem;
+
+}
+.cha_kan_mi_ma .ru_he_shi_yong_TONOT____1  {
+    position:absolute;
+left:1.600000rem;
+top:8.386667rem;
+width:1.800000rem;
+height:0.240000rem;
+color:rgba(83,98,255,1);
+line-height:normal;
+font-size:0.173333rem;
+font-family:PingFangSC-Regular;
+letter-spacing:0.002961rem;
+
+}
+.cha_kan_mi_ma .Group_3_1 .yu_yin_yin_liang_1  {
+    position:absolute;
+width:0.826667rem;
+height:0.280000rem;
+color:rgba(33,33,33,1);
+line-height:normal;
+font-size:0.200000rem;
+font-family:PingFangSC-Regular;
+letter-spacing:0.003417rem;
+
+}
+.cha_kan_mi_ma .Group_3_1 .Group_2_1 .Rectangle_21_2 .Path_42  {
+    background-color:rgba(235,235,235,1);
+position:absolute;
+width:3.733333rem;
+height:0.026667rem;
+border-radius:0.040000rem;
+
+}
+.cha_kan_mi_ma .Group_3_1 .Group_2_1 .Rectangle_21_3 .Path_43  {
+    background-color:rgba(128,128,255,1);
+position:absolute;
+width:2.826667rem;
+height:0.026667rem;
+border-radius:0.040000rem;
+
+}
+.cha_kan_mi_ma .Group_3_1 .Group_2_1 .Oval_1 .Path_44  {
+    background-color:rgba(255,255,255,1);
+position:absolute;
+width:0.293333rem;
+height:0.293333rem;
+border-radius:0.146667rem;
+
+}
+.cha_kan_mi_ma .Group_3_1 .Group_2_1 .jing_yinicon_1  {
+    position:absolute;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .Group_3_1 .Group_2_1 .jing_yinicon_1 .Group_9 .Rectangle .Path_57  {
+    background-color:rgba(215,215,215,1);
+position:absolute;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .Group_3_1 .Group_2_1 .jing_yinicon_1 .Group_9 .Combined_Shape_2 .Rectangle_6_1  {
+    fill:none;
+stroke:rgba(44,44,44,1);
+width:0.066667rem;
+height:0.133333rem;
+stroke-width:1px;
+position:absolute;
+top:0.064295rem;
+border-radius:0.013333rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Group_3_1 .Group_2_1 .jing_yinicon_1 .Group_9 .Combined_Shape_2 .Triangle_2_2  {
+    fill:none;
+stroke:rgba(44,44,44,1);
+width:0.096178rem;
+height:0.262078rem;
+stroke-width:1px;
+position:absolute;
+left:0.037155rem;
+top:0.000000rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Group_3_1 .Group_2_1 .yin_liangicon_1  {
+    position:absolute;
+left:4.306667rem;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .Group_3_1 .Group_2_1 .yin_liangicon_1 .Group_3_2 .Mask_4 .Path_61  {
+    background-color:rgba(215,215,215,1);
+position:absolute;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .Group_3_1 .Group_2_1 .yin_liangicon_1 .Group_3_2 .Group_3_3 .Combined_Shape_5 .Rectangle_6_2  {
+    fill:none;
+stroke:rgba(44,44,44,1);
+width:0.066667rem;
+height:0.133333rem;
+stroke-width:1px;
+position:absolute;
+top:0.064295rem;
+border-radius:0.013333rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Group_3_1 .Group_2_1 .yin_liangicon_1 .Group_3_2 .Group_3_3 .Combined_Shape_5 .Triangle_2_5  {
+    fill:none;
+stroke:rgba(44,44,44,1);
+width:0.096178rem;
+height:0.262078rem;
+stroke-width:1px;
+position:absolute;
+left:0.037155rem;
+top:0.000000rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Group_3_1 .Group_2_1 .yin_liangicon_1 .Group_3_2 .Group_3_3 .Oval_5_1 .Path_62  {
+    fill:none;
+stroke:rgba(44,44,44,1);
+width:0.080000rem;
+height:0.080000rem;
+stroke-width:1px;
+position:absolute;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Group_3_1 .Group_2_1 .yin_liangicon_1 .Group_3_2 .Group_3_3 .Oval_5_2 .Path_63  {
+    fill:none;
+stroke:rgba(44,44,44,1);
+width:0.124853rem;
+height:0.124853rem;
+stroke-width:1px;
+position:absolute;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Group_4_1 .Combined_Shape_1 .___2  {
+    fill:rgba(192,192,192,1);
+width:0.087400rem;
+height:0.107800rem;
+stroke-width:1;
+position:absolute;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Group_4_1 .Combined_Shape_1 .___3  {
+    fill:rgba(192,192,192,1);
+width:0.024200rem;
+height:0.023800rem;
+stroke-width:1;
+position:absolute;
+left:0.030400rem;
+top:0.121800rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .Group_4_1 .Oval_28_1 .Path_45  {
+    background-color:rgba(192,192,192,1);
+position:absolute;
+width:0.015733rem;
+height:0.015733rem;
+border-radius:0.007867rem;
+
+}
+.cha_kan_mi_ma .Rectangle_7_1 .Path_46  {
+    background-color:rgba(13,13,13,0.5);
+position:absolute;
+width:5.000000rem;
+height:8.893333rem;
+
+}
+.cha_kan_mi_ma .mo_tai_dui_hua_kuang_1 .Rectangle__1 .Path_47  {
+    background-color:rgba(255,255,255,1);
+position:absolute;
+width:3.466667rem;
+height:2.373333rem;
+border-radius:0.200000rem;
+
+}
+.cha_kan_mi_ma .mo_tai_dui_hua_kuang_1 .Group_7_1 .Rectangle_5_1 .Path_48  {
+    border-color:rgba(235,235,235,1);
+border-width:0.013333rem;
+border-style:solid;
+position:absolute;
+width:2.640000rem;
+height:0.560000rem;
+border-radius:0.080000rem;
+
+}
+.cha_kan_mi_ma .mo_tai_dui_hua_kuang_1 .Group_7_1 .yan_jingicon-___1  {
+    position:absolute;
+left:2.240000rem;
+top:0.146667rem;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .mo_tai_dui_hua_kuang_1 .Group_7_1 .yan_jingicon-___1 .yan_jingicon .Group_9_1 .Mask_2 .Path_58  {
+    background-color:rgba(215,215,215,1);
+position:absolute;
+width:0.293333rem;
+height:0.293333rem;
+
+}
+.cha_kan_mi_ma .mo_tai_dui_hua_kuang_1 .Group_7_1 .yan_jingicon-___1 .yan_jingicon .Group_9_1 .Group_10 .Combined_Shape_3 .Oval_2_2  {
+    fill:rgba(171,171,171,1);
+width:0.266667rem;
+height:0.266667rem;
+stroke-width:1;
+position:absolute;
+border-radius:0.133333rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .mo_tai_dui_hua_kuang_1 .Group_7_1 .yan_jingicon-___1 .yan_jingicon .Group_9_1 .Group_10 .Combined_Shape_3 .Oval_5  {
+    fill:rgba(171,171,171,1);
+width:0.160000rem;
+height:0.160000rem;
+stroke-width:1;
+position:absolute;
+left:0.053333rem;
+top:0.053333rem;
+border-radius:0.080000rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .mo_tai_dui_hua_kuang_1 .Group_7_1 .yan_jingicon-___1 .yan_jingicon .Group_9_1 .Group_10 .Combined_Shape_4 .Oval_6_Copy  {
+    fill:rgba(171,171,171,1);
+width:0.106667rem;
+height:0.106667rem;
+stroke-width:1;
+position:absolute;
+border-radius:0.053333rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .mo_tai_dui_hua_kuang_1 .Group_7_1 .yan_jingicon-___1 .yan_jingicon .Group_9_1 .Group_10 .Combined_Shape_4 .Oval_6  {
+    fill:rgba(171,171,171,1);
+width:0.026667rem;
+height:0.026667rem;
+stroke-width:1;
+position:absolute;
+left:0.026667rem;
+top:0.026667rem;
+border-radius:0.013333rem;
+line-height:normal;
+
+}
+.cha_kan_mi_ma .mo_tai_dui_hua_kuang_1 .Group_7_1 .Label_Copy_2_1  {
+    position:absolute;
+left:0.133333rem;
+top:0.160000rem;
+width:0.800000rem;
+height:0.280000rem;
+color:#000000;
+line-height:normal;
+font-size:0.200000rem;
+font-family:PingFangSC-Regular;
+
+}
+.cha_kan_mi_ma .mo_tai_dui_hua_kuang_1 .Group_6 .Rectangle_8_1 .Path_49  {
+    background-color:rgba(128,128,255,1);
+position:absolute;
+width:2.133333rem;
+height:0.533333rem;
+border-radius:1.120000rem;
+
+}
+.cha_kan_mi_ma .mo_tai_dui_hua_kuang_1 .Group_6 .Label_2  {
+    position:absolute;
+left:0.813333rem;
+top:0.133333rem;
+width:0.493333rem;
+height:0.280000rem;
+color:#000000;
+line-height:normal;
+font-size:0.200000rem;
+font-family:PingFangSC-Medium;
+
+}
+.cha_kan_mi_ma .mo_tai_dui_hua_kuang_1 .Label_3  {
+    position:absolute;
+left:1.280000rem;
+top:0.333333rem;
+width:0.906667rem;
+height:0.320000rem;
+color:#000000;
+line-height:normal;
+font-size:0.226667rem;
+font-family:PingFangSC-Medium;
+
+}

@@ -4,6 +4,13 @@ module.exports = function(html,layer) {
 <head>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width,minimal-ui">
 <link rel="stylesheet" href="./artboard-${layer.name}.css" type="text/css" />
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+</style>
 </head>
 <body >
 ${html}
@@ -16,6 +23,7 @@ ${html}
     function refreshRem() {
         // 获取当前窗口的宽度
         var width = docEl.getBoundingClientRect().width;
+        width = width * win.devicePixelRatio;
         // 大于640px 按640算
         if (width > 750) { width = 750 }
         var rem = width / 10;  // cms 只要把这行改成  var rem = width /640 * 100 
