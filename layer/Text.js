@@ -73,7 +73,7 @@ class TextLayer extends LayerProtocol {
             'position': 'absolute',
             'left': util.px2rem(this.layer.frame.x),
             'top': util.px2rem(this.layer.frame.y),
-            'width': util.px2rem(width),
+            'white-space': 'nowrap',
             'height': util.px2rem(height),
             'transform': this.layer.style.transform ? this.layer.style.transform.join(' ') : null,
             'box-shadow': this.layer.style.boxShadow,
@@ -97,7 +97,7 @@ class TextLayer extends LayerProtocol {
 
     getHtml (childString) {
         let layer = this.layer;
-        return `<div id="${layer.id}" class="${layer.name}" style="${util.getStyleString(layer.finalStyle)}" >${childString}</div>`;
+        return `<div class="${layer.name}" style="${util.getStyleString(layer.finalStyle)}" >${childString}</div>`;
     }
 }
 

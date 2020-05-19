@@ -43,7 +43,7 @@ const styleParser = function (style, attributedString, layer) {
         });
     }
 
-
+   
     if (style.textStyle && attributedString && attributedString.archivedAttributedString) {
         const decodedAttributedString = parseArchive(attributedString.archivedAttributedString._archive);
         let encodedAttributes;
@@ -110,6 +110,36 @@ const styleParser = function (style, attributedString, layer) {
             result.paragraphSpacing = paragraphSpacing;
         }
         result.text = decodedAttributedString.NSString.split(/\n/g).join(`<div style="height:${util.px2rem(result.paragraphSpacing)}"></div>`);
+    }else if(style.textStyle){
+        try{
+            const colorArray = style.textStyle.encodedAttributes.MSAttributedStringColorAttribute;
+            const colors = {};
+            colors.red = parseFloat(colorArray['red']);
+            colors.green = parseFloat(colorArray['green']);
+            colors.blue = parseFloat(colorArray['blue']);
+            colors.alpha = parseFloat(colorArray['alpha']);
+            result.color = colorParser(colors);
+        }catch(e){
+            result.color = result.color || '#000000';
+        }
+        try{
+            let fontAttr=style.textStyle.encodedAttributes.MSAttributedStringFontAttribute.attributes
+            result.fontSize = fontAttr.size;
+            result.fontFamily = fontAttr.fontFamily;
+        }catch(e){
+            result.fontSize = fontAttr.size || '15px';
+        }
+        try{
+            result.letterSpacing = style.textStyle.encodedAttributes.kerning;
+            result.lineHeight = layer.frame.height
+        }catch(e){
+            result.letterSpacing = 0;
+        }
+        try{
+            result.textAlign = style.textStyle.paragraphStyle.alignment;
+        }catch(e){
+            result.textAlign = 0;
+        }
     }
     if (style.fills) {
         style.fills.forEach((fill) => {

@@ -70,7 +70,7 @@ var util = {
      * @returns {boolean}
      */
     isCircle: function (layer) {
-        if (!layer.path.points || layer.path.points.length !== 4) {
+        if (!layer|| !layer.path || !layer.path.points || layer.path.points.length !== 4) {
             return false;
         }
         const isSquare = this.isSqu( layer);
@@ -87,7 +87,7 @@ var util = {
      */
     isRect(layer) {
         const path = layer.path;
-        if (path.points.length !== 4) {
+        if (!path || !path.points || path.points.length !== 4) {
             return false;
         }
         const rectPoints = path.points.map(x => this.toPoint(x.point, layer));
